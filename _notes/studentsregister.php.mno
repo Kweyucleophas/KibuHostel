@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<info>
+	<infoitem key="UD_DetailRS1" value="name:user_id;datatype:int,name:fname;datatype:string,name:lname;datatype:string,name:email;datatype:string,name:psword;datatype:string,name:id_no;datatype:int,name:job_title;datatype:string,name:hostel;datatype:string,name:phone_no;datatype:int,name:date_reg;datatype:timestamp,name:user_level;datatype:int" />
+	<infoitem key="UD_LiveData_params" value="1" />
+	<infoitem key="UD_LiveData_param0" value="recordID=1" />
+	<infoitem key="UD_DetailRS2" value="name:user_id;datatype:int,name:fname;datatype:string,name:lname;datatype:string,name:email;datatype:string,name:psword;datatype:string,name:admmision;datatype:string,name:registration_date;datatype:datetime,name:user_level;datatype:int,name:school;datatype:string,name:haddr;datatype:string,name:sex;datatype:string,name:course;datatype:string,name:phone;datatype:int,name:check_in;datatype:string,name:matress;datatype:int,name:curtain;datatype:int,name:keyy;datatype:int" />
+</info>
