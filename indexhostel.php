@@ -9,7 +9,7 @@
 </head>
 
 <body>
-<aside id="contact">contact</aside>
+
 
 	<header id="head"><hgroup id="hed">
 		 <tr>
@@ -94,5 +94,6 @@ exit(); // Cancels the rest of the script.
          
         
 </div>
-<footer class="foot">copy right Kibabii University &copy; 2022</footer></body>
+<center><footer class="foot">copy right Kibabii University &copy; 2022</footer></center>
+</body>
 </html>

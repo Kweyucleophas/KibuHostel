@@ -67,7 +67,7 @@
                <br>
                <input class="input2" type="number" name="amount" placeholder="Enter Amount" style="margin-top: 60px;">
                <br><br>
-               <input type="number" type="number" name="phone_number" placeholder="enter Phone number">
+               <input type="number" type="number" name="telephone_number" placeholder="enter Phone number">
                <br><br>
                <button class="button" style="color: white; background-color: blue;">
                Make Payment Now

@@ -1,34 +1,42 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
+    <script src="SpryAssets/SpryMenuBar.js" type="text/javascript"></script>
+<link href="SpryAssets/SpryMenuBarHorizontal.css" rel="stylesheet" type="text/css" />
 <link rel="stylesheet" href="hostel.css" type="text/css" />
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>HOSTEL MANAGEMENT</title>
 </head>
 
 <body>
-<aside id="contact">contact</aside>
+
 
   <header id="head"><hgroup id="hed">
-    <h2 >hostel management</h2>
-        <nav>
-        <ul id="nav">
-          <li id="current"><a href="#">home page</a></li>
-            <li><a href="#">home page</a></li>
-            <li><a href="#">home page</a></li>
-            <li><a href="#">home page</a></li>
-            <li><a href="#">home page</a></li>
-            <li><a href="#">home page</a></li>
-            </ul></nav>
-      </hgroup>
+     <tr>
+    <th scope="row"><ul id="MenuBar1" class="MenuBarHorizontal">
+      <li><a href="home.php">Home</a>        </li>
+      <li><a href="Studend2.php">Join</a></li>
+      <li><a href="#">About</a>
+       
+      </li>
+      <li><a href="dashboard.php">Clearence</a></li>
+      <li><a href="contactus.php">contact us</a></li>
+      <li><a href="#">Logout</a></li>
+    </ul></th>
+  </tr>
+  <tr style="background-color:#003; color:#FFF;">
+    <th scope="row"><img src="logo.png" width="70" height="70" align="right" /><h2 >KIBABII HOSTEL</h2>
+    <h1 style="text-align:justify;"> </h1></th>
+  </tr>
+</table>
       </header>
         <div class="content">
         <section style="text-align:center">
-        <img src="xxx.JPG" width="190px" height="190px" />
-        <img src="xxx.JPG" width="190px" height="190px" />
-        <img src="xxx.JPG" width="190px" height="190px" />
-        <img src="xxx.JPG" width="190px" height="190px" />
-        <img src="xxx.JPG" width="190px" height="190px" />
+       <img src="image.jpeg" width="190px" height="190px" />
+        <img src="download (1).jfif" width="190px" height="190px" />
+        <img src="download (2).jfif" width="190px" height="190px" />
+        <img src="download.jfif" width="190px" height="190px" />
+        <img src="download (3).jfif" width="190px" height="190px" />
         </section>
         
         <!-- Start of the login page content. -->
@@ -85,5 +93,6 @@ exit(); // Cancels the rest of the script.
          
         
 </div>
-<footer class="foot">copy right Kibabii University &copy; 2022</footer></body>
+<center><footer class="foot">copy right Kibabii University &copy; 2022</footer></center>
+</body>
 </html>

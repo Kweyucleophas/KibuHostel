@@ -220,7 +220,7 @@ $queryString_Recordset1 = sprintf("&totalRows_Recordset1=%d%s", $totalRows_Recor
                 </tr>
           </table>
             </section></div>
-<footer style=" text-align:center;" class="foot">copy right apps:lab programmers &copy; 2014</footer>
+<footer style=" text-align:center;" class="foot">copy right Kibabii University &copy; 2022</footer>
 
 </div>
 </div>
