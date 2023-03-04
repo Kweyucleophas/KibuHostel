@@ -48,6 +48,41 @@ if ((isset($_POST["MM_insert"])) && ($_POST["MM_insert"] == "form1")) {
   mysql_select_db($database_dbcon, $dbcon);
   $Result1 = mysql_query($insertSQL, $dbcon) or die(mysql_error());
 }
+
+if ((isset($_POST["MM_insert"])) && ($_POST["MM_insert"] == "form2")) {
+  $insertSQL = sprintf("INSERT INTO clearence_form (admmision, `year`, sem, roomno) VALUES (%s, %s, %s, %s)",
+                       GetSQLValueString($_POST['admmision'], "text"),
+                       GetSQLValueString($_POST['year'], "int"),
+                       GetSQLValueString($_POST['sem'], "text"),
+                       GetSQLValueString($_POST['roomno'], "int"));
+
+  mysql_select_db($database_dbcon, $dbcon);
+  $Result1 = mysql_query($insertSQL, $dbcon) or die(mysql_error());
+
+  $insertGoTo = "clearence_page.php";
+  if (isset($_SERVER['QUERY_STRING'])) {
+    $insertGoTo .= (strpos($insertGoTo, '?')) ? "&" : "?";
+    $insertGoTo .= $_SERVER['QUERY_STRING'];
+  }
+  header(sprintf("Location: %s", $insertGoTo));
+}
+
+if ((isset($_POST["MM_insert"])) && ($_POST["MM_insert"] == "form3")) {
+  $insertSQL = sprintf("INSERT INTO clearence_form (hostel, roomno, Letter) VALUES (%s, %s, %s)",
+                       GetSQLValueString($_POST['hostel'], "text"),
+                       GetSQLValueString($_POST['roomno'], "int"),
+                       GetSQLValueString($_POST['Letter'], "text"));
+
+  mysql_select_db($database_dbcon, $dbcon);
+  $Result1 = mysql_query($insertSQL, $dbcon) or die(mysql_error());
+
+  $insertGoTo = "clearence_page.php";
+  if (isset($_SERVER['QUERY_STRING'])) {
+    $insertGoTo .= (strpos($insertGoTo, '?')) ? "&" : "?";
+    $insertGoTo .= $_SERVER['QUERY_STRING'];
+  }
+  header(sprintf("Location: %s", $insertGoTo));
+}
 ?>
 <!DOCTYPE html>
 <html>
@@ -119,8 +154,9 @@ if ((isset($_POST["MM_insert"])) && ($_POST["MM_insert"] == "form1")) {
       <div id="TabbedPanels1" class="TabbedPanels">
         <ul class="TabbedPanelsTabGroup">
           <li class="TabbedPanelsTab" tabindex="0">Enter Personal Details</li>
-          <li class="TabbedPanelsTab" tabindex="0">Hostel Details</li>
-           <li class="TabbedPanelsTab" tabindex="0">Hostel Details</li>
+          <li class="TabbedPanelsTab" tabindex="0">School  Details</li>
+          <li class="TabbedPanelsTab" tabindex="0">Hostell Details</li>
+          <li class="TabbedPanelsTab" tabindex="0">tab 4</li>
         </ul>
         <div class="TabbedPanelsContentGroup">
           <div class="TabbedPanelsContent">
@@ -161,7 +197,65 @@ if ((isset($_POST["MM_insert"])) && ($_POST["MM_insert"] == "form1")) {
             </form></center>
             <p>&nbsp;</p>
           </div>
-          <div class="TabbedPanelsContent">Content 2</div>
+          <div class="TabbedPanelsContent">
+            <h2 style="text-align:center; text-transform:capitalize; ">school details<br >Enter Your School Details as stated</h2>
+          <center>
+            <form method="post" name="form2" action="<?php echo $editFormAction; ?>">
+              <table align="center">
+                <tr valign="baseline">
+                  <td nowrap align="right">Admmision:</td>
+                  <td><input type="text" name="admmision" value="" size="32"></td>
+                </tr>
+                <tr valign="baseline">
+                  <td nowrap align="right">Year:</td>
+                  <td><input type="text" name="year" value="" size="32"></td>
+                </tr>
+                <tr valign="baseline">
+                  <td nowrap align="right">Sem:</td>
+                  <td><input type="text" name="sem" value="" size="32"></td>
+                </tr>
+                <tr valign="baseline">
+                  <td nowrap align="right">Roomno:</td>
+                  <td><input type="text" name="roomno" value="" size="32"></td>
+                </tr>
+                <tr valign="baseline">
+                  <td nowrap align="right">&nbsp;</td>
+                  <td style="text-align: center; width: 40px; float: right;"> <input class="button_small" type="submit" value="Save"></td>
+                </tr>
+              </table>
+              <input type="hidden" name="MM_insert" value="form2">
+            </form>
+            </center>
+            <p>&nbsp;</p>
+          </div>
+          <div class="TabbedPanelsContent">
+            <h2 style="text-align:center; text-transform:capitalize; ">hostel details<br >Enter Your Hostel Details as stated</h2>
+          <center>
+            <form method="post" name="form3" action="<?php echo $editFormAction; ?>">
+              <table align="center">
+                <tr valign="baseline">
+                  <td nowrap align="right">Hostel:</td>
+                  <td><input type="text" name="hostel" value="" size="32"></td>
+                </tr>
+                <tr valign="baseline">
+                  <td nowrap align="right">Roomno:</td>
+                  <td><input type="text" name="roomno" value="" size="32"></td>
+                </tr>
+                <tr valign="baseline">
+                  <td nowrap align="right">Upload Your Letter:</td>
+                  <td><input type="file" name="Letter" size="32"></td>
+                </tr>
+                <tr valign="baseline">
+                  <td nowrap align="right">&nbsp;</td>
+                  <td style="text-align: center; width: 40px; float: right;"><input class="button_small" type="submit" value="save"></td>
+                </tr>
+              </table>
+              <input type="hidden" name="MM_insert" value="form3">
+            </form>
+            </center>
+            <p>&nbsp;</p>
+          </div>
+          <div class="TabbedPanelsContent">Content 4</div>
         </div>
       </div>
     </div>
