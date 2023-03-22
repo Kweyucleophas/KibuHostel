@@ -3,6 +3,14 @@
 <html lang=en>
 <head>
 <title>Admin page</title>
+<style type="text/css">
+  .container {
+  position: relative;
+  z-index: 1;
+  overflow-y: auto;
+  height: calc(100vh - {height of the header});
+}
+</style>
 <meta charset=utf-8>
     <link rel="stylesheet" href="style.css" />
 <script src="SpryAssets/SpryMenuBar.js" type="text/javascript"></script>
@@ -49,62 +57,7 @@
         <div class="">
 <div class="">
     <div class="">
-     <?php require_once('Connections/dbcon.php'); ?>
-<?php
-if (!function_exists("GetSQLValueString")) {
-function GetSQLValueString($theValue, $theType, $theDefinedValue = "", $theNotDefinedValue = "") 
-{
-  if (PHP_VERSION < 6) {
-    $theValue = get_magic_quotes_gpc() ? stripslashes($theValue) : $theValue;
-  }
-
-  $theValue = function_exists("mysql_real_escape_string") ? mysql_real_escape_string($theValue) : mysql_escape_string($theValue);
-
-  switch ($theType) {
-    case "text":
-      $theValue = ($theValue != "") ? "'" . $theValue . "'" : "NULL";
-      break;    
-    case "long":
-    case "int":
-      $theValue = ($theValue != "") ? intval($theValue) : "NULL";
-      break;
-    case "double":
-      $theValue = ($theValue != "") ? doubleval($theValue) : "NULL";
-      break;
-    case "date":
-      $theValue = ($theValue != "") ? "'" . $theValue . "'" : "NULL";
-      break;
-    case "defined":
-      $theValue = ($theValue != "") ? $theDefinedValue : $theNotDefinedValue;
-      break;
-  }
-  return $theValue;
-}
-}
-
-$editFormAction = $_SERVER['PHP_SELF'];
-if (isset($_SERVER['QUERY_STRING'])) {
-  $editFormAction .= "?" . htmlentities($_SERVER['QUERY_STRING']);
-}
-
-if ((isset($_POST["MM_insert"])) && ($_POST["MM_insert"] == "form1")) {
-  $insertSQL = sprintf("INSERT INTO users (user_id, fname, lname, email, admmision, registration_date, school, sex, course, phone, check_in) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)",
-                       GetSQLValueString($_POST['user_id'], "int"),
-                       GetSQLValueString($_POST['fname'], "text"),
-                       GetSQLValueString($_POST['lname'], "text"),
-                       GetSQLValueString($_POST['email'], "text"),
-                       GetSQLValueString($_POST['admmision'], "text"),
-                       GetSQLValueString($_POST['registration_date'], "date"),
-                       GetSQLValueString($_POST['school'], "text"),
-                       GetSQLValueString($_POST['sex'], "text"),
-                       GetSQLValueString($_POST['course'], "text"),
-                       GetSQLValueString($_POST['phone'], "int"),
-                       GetSQLValueString($_POST['check_in'], "text"));
-
-  mysql_select_db($database_dbcon, $dbcon);
-  $Result1 = mysql_query($insertSQL, $dbcon) or die(mysql_error());
-}
-?>
+   
 <!DOCTYPE HTML>
 <html>
 <head>
