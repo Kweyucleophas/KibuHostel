@@ -167,7 +167,7 @@ $start = $_GET['s'];
 $start = 0;
 }
 // Make the query:
-$q = "SELECT Fname, Lname, admmision, Email, hostel, roomno, Year, sem, DATE_FORMAT(registration_date, '%M %d, %Y') AS regdat, user_id FROM clearence_form ORDER BY registration_date ASC LIMIT $start, $pagerows";    
+$q = "SELECT Fname, Lname, admmision, Email, hostel, roomno, Year, sem, DATE_FORMAT(registration_date, '%M %d, %Y') AS regdat, user_id FROM students ORDER BY registration_date ASC LIMIT $start, $pagerows";    
 $result = @mysqli_query ($dbcon, $q); // Run the query.
 $members = mysqli_num_rows($result);
 if ($result) { // If it ran OK, display the records.
@@ -175,15 +175,15 @@ if ($result) { // If it ran OK, display the records.
 echo '<table>
 <tr><td><b>Edit</b></td>
 <td><b>Delete</b></td>
-<td><b>First Name</b></td>
-<td><b> Last Name</b></td>
-<td><b>admision</b></td>
-<td><b>email</b></td>
+<td><b>name</b></td>
+<td><b> Admision</b></td>
+<td><b>Email</b></td>
+<td><b>Year</b></td>
+<td><b>Sem</b></td>
 <td><b>hostel</b></td>
 <td><b>roomno</b></td>
-<td><b>year</b></td>
-<td><b>sem</b></td>
-<td><b>Date Registered</b></td>
+<td><b>reason</b></td>
+
 </tr>';
 // Fetch and print all the records:
 while ($row = mysqli_fetch_array($result, MYSQLI_ASSOC)) {

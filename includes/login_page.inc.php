@@ -7,4 +7,5 @@
 		<p><label class="label" style="padding-left:31px;" for="psword">Password:</label>
 	<input id="psword" type="password" name="psword" size="30" maxlength="12" value="<?php if (isset($_POST['psword'])) echo $_POST['psword']; ?>" ><span>&nbsp;Between 8 and 12 characters.</span></p>
 	<p ><input class="button_small" id="submit" type="submit" name="submit" value="Login"> <a class="button_small" style="float:right; height:20px; text-decoration: none; color:#FFF;" href="studentsregister.php">Sign up students portal</a><a class="button_small" href="loginwrk.php" style="height: 25px; text-decoration:none; float:right; height:20PX; text-transform:none; color:#FFF;">WORKERS LOG IN PORTAL</a></p> 
+	<button id="submit" style="margin-top:40px ; background-color: darkblue;"><a href="2b-forgot.php"> Forget Password</a></button>
 </form><br>

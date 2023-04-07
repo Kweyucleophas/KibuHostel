@@ -5,10 +5,10 @@
 <title>Admin page</title>
 <style type="text/css">
   .container {
-  position: relative;
-  z-index: 1;
-  overflow-y: auto;
-  height: calc(100vh - {height of the header});
+         display: block;
+  margin-top: 20px;
+   overflow-y: scroll;
+    top: 46px;
 }
 </style>
 <meta charset=utf-8>

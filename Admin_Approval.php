@@ -41,134 +41,181 @@ if (isset($_POST['action']) && isset($_POST['id'])) {
 	}
 }
 ?>
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang=en>
 <head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Admin Approval</title>
+<title>Admin page</title>
+<meta charset=utf-8>
+    <link rel="stylesheet" href="style.css" />
+    <title>Unapproved Students</title>
 	<style>
+		.container{
+			  display: block;
+  margin-top: 20px;
+   overflow-y: scroll;
+    top: 46px;
+   
+		}
 		table {
 			border-collapse: collapse;
 			width: 100%;
+			text-align: center;
 		}
 
 		th, td {
-			text-align: left;
 			padding: 8px;
+			text-align: left;
+			border-bottom: 1px solid #ddd;
+		}
+
+		tr:hover {
+			background-color: #f5f5f5;
 		}
 
 		th {
-			background-color:darkblue;
-			color: white;
-		}
-
-		tr:nth-child(even) {
-			background-color: #f2f2f2;
-		}
-
-		button {
-			background-color: #4CAF50;
-			border: none;
-			color: white;
-			padding: 8px 16px;
-			text-align: center;
-			text-decoration: none;
-			display: inline-block;
-			font-size: 14px;
-			margin: 4px 2px;
-			cursor: pointer;
-		}
-
-		button.approve {
 			background-color: gold;
-		}
-
-		button.reject {
-			background-color: darkred;
+			color: white;
 		}
 		img{
-			width: 160px;
-			height: 160px;
+			width: 70px;
+			height: 50pxs;
 		}
+		button{
+        margin-right: 20px;
+        background-color: darkblue;
+        height: 40px;
+        border-radius: 5px;
+        color: white;
+        text-decoration: blink;}
+         a{
+        	text-decoration: none;
+        	color: white;
+        }
 	</style>
+<script src="SpryAssets/SpryMenuBar.js" type="text/javascript"></script>
+<link href="SpryAssets/SpryMenuBarVertical.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" type="text/css" href="hostel.css">
 </head>
 <body>
+   <div class="form2">
+        
+        </div>
+        <div class="side-menu">
+          <div class="brand-name">
+             <h2 style="display: contents;color: black;"> <img src="logo.png" width="120px" style="width: 60px; height: 60px;">KIBABII HOSTEL</h2>
+          </div>
+          <ul>
+            <li><a href="admin-page.php" style="text-decoration: none;"><img src="icon/icons8-dashboard-80.png" style="width: 30px; height: 30px; margin: 2px;"><span>Dashboard</a></span></li>
+            <li><a href="hosteldetails.php" style="text-decoration: none;"><img src="icon/buid.png" style="width: 30px; height: 30px; margin: 2px"><span>Block</a></span></li>
+            <li><a href="Admin_Approval.php" style="text-decoration: none;"><img src="icon/living-room.png" style="width: 30px; height: 30px; margin: 2px;"><span>Approve</a></span></li>
+             <li><a href="Add_Item.php" style="text-decoration: none;"><img src="icon/to-do.png" style="width: 30px; height: 30px; margin: 2px;"><span>Items</a></span></li>
+             <li><a href="Add_Student.php" style="text-decoration: none;"><img src="icon/student.png" style="width: 30px; height: 30px; margin: 2px"><span>Student</a></span>
+             </li>
+            <li><a href="edit_record.php" style="text-decoration: none;"><img src="icon/help.png" style="width: 30px; height: 30px; margin: 2px"><span>Update/Edit</a></span></li>
+            <li><a href="indexhostel.php" style="text-decoration: none;"><img src="icon/logout.png" style="width: 30px; height: 30px; margin: 2px"><span>Logout</a></span></li>
+        </ul>
+        </div>
+        <div class="container">
+  <div class="header">
+    <div class="nav">
+    <div class="search">
+<input type="text" placehold="search">
+<button type="submit"><img src="icon/search-512 (1) (1).webp" style="width: 30px; height: 30px;"></button>
+    </div>
+    <div class="user">
+      <a href="Add_Student.php" class="btn">Add New</a>
+       <img src="icon/notif.png" style="display: flex; width: 30px; height: 30px;">
+      <div class="img-case">
+       <img src="icon/icons8-username-50.png">
+        <p style="margin-left:45px;0px;"><strong style="margin-top: 100px;">Hello,<br>
+      </div>
+    </div>
+     </div>
+</div>
+    <div class="content">
+        <div class="">
+<div class="">
+    <div class="">
+    <div style="width: 900px; height: 1000px; overflow-x: scroll; margin: auto; margin-top: 50px; display: fixed; overflow-y: scroll;
+   ">
 	<center>
-	<img src="logo.png">
-</center>
-<table>
-	<thead>
-	<tr>
-		<th>Name</th>
-		<th>Admission Number</th>
-		<th>Email</th>
-		<th>Year</th>
-		<th>Semester</th>
-		<th>Hostel</th>
-	<th>Room Number</th>
-		<th>Reason</th>
-		<th>Action</th>
-	</tr>
-</thead>
-<tbody>
-	<?php
-	$q ="SELECT * FROM students WHERE cleared = FALSE";
-	$result = $dbcon->query($q);
-	if ($result->num_rows>0) {
-		while ($row=$result->fetch_assoc()) {
-			echo "<tr>";
-			echo "<td>".$row["name"]. "</td>";
-			echo "<td>".$row["Admision"]. "</td>";
-			echo "<td>".$row["Email"]. "</td>";
-			echo "<td>".$row["Year"]. "</td>";
-			echo "<td>".$row["Sem"]. "</td>";
-			echo "<td>".$row["hostel"]. "</td>";
-			echo "<td>".$row["roomno"]. "</td>";
-			echo "<td>".$row["reason"]. "</td>";
-			echo "<td><button onclick=\"approveClearance(".$row["id"].")\">Approve</button><button onclick=\"rejectClearance(".$row["id"].")\">Reject</button></td>";
-			echo "</tr>";
-		}
-	} else {
-		echo "<tr><td colspan=\"9\">No pending clearance requests</td></tr>";
-	}
-	?>
-</tbody>
-</table>
+		<img src="logo.png">
+		<h2>Approve the Following Students</h2>
+	</center>
+	<button><a href="approvedStudents.php">Show approved students</a></button>
+	<table>
+		<thead>
+			<tr>
+				<th>Name</th>
+				<th>Admission Number</th>
+				<th>Email</th>
+				<th>Year</th>
+				<th>Semester</th>
+				<th>Hostel</th>
+				<th>Room Number</th>
+				<th>Reason</th>
+				
+				<th>Status</th>
+			</tr>
+		</thead>
+		<tbody>
+			<?php require_once("dbcon.php")?>
+			<?php
+// ... code to check if the user is an admin ...
 
-<script>
-function approveClearance(id) {
-  // Perform the approve clearance action using AJAX or other methods
-  console.log("Approved clearance for id " + id);
+// Get all unapproved students
+$sql = "SELECT * FROM students WHERE cleared = 0 AND approved = 0";
+
+$result = $dbcon->query($sql);
+// Check if any rows were returned
+if ($result->num_rows > 0) {
+    // Start the table and output the header row
+    //echo '<table>';
+   
+    echo '<tbody>';
+
+    // Loop through the rows of data and output each one in a table row
+    while($row = $result->fetch_assoc()) {
+        echo '<tr>';
+        echo '<td>' . $row['name'] . '</td>';
+        echo '<td>' . $row['Admision'] . '</td>';
+        echo '<td>' . $row['Email'] . '</td>';
+        echo '<td>' . $row['Year'] . '</td>';
+        echo '<td>' . $row['Sem'] . '</td>';
+        echo '<td>' . $row['hostel'] . '</td>';
+        echo '<td>' . $row['roomno'] . '</td>';
+        echo '<td>' . $row['reason'] . '</td>';
+        echo '<td>';
+        if ($row['cleared'] == 0) {
+            echo '<button><a href="approve.php?id=' . $row['id'] . '">Approve</a></button> |<button style="background-color: darkred;"><a href="reject.php?id=' . $row['id'] . '">Decline</a></button>';
+        } else {
+            echo 'Approved';
+        }
+        echo '</td>';
+        echo '</tr>';
+    }
+
+    // End the table
+    echo '</tbody></table>';
+} else {
+    echo 'No unapproved students found.';
 }
 
-function rejectClearance(id) {
-  // Perform the reject clearance action using AJAX or other methods
-  console.log("Rejected clearance for id " + id);
-}
-function approveClearance(id) {
-  $.post("admin_approval.php", { action: "approve", id: id })
-   .done(function(data) {
-     alert(data);
-     location.reload();
-   })
-   .fail(function() {
-     alert("Error approving clearance request");
-   });
-}
+// ... code to close the database connection ...
+?>
 
-function rejectClearance(id) {
-  $.post("admin_approval.php", { action: "reject", id: id })
-   .done(function(data) {
-     alert(data);
-     location.reload();
-   })
-   .fail(function() {
-     alert("Error rejecting clearance request");
-   });
-}
-
-</script>
-
+		</tbody>
+	</table>
+</div>	
+</div>
+</div>
 </body>
 </html>
+
+
+
+
+
+
+
+

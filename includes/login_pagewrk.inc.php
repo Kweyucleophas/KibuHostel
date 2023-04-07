@@ -21,7 +21,7 @@
 font-size: 90%;
 	}
 </style>
-<form action="dashboard2.php" method="post">
+<form action="admin-page.php" method="post">
 	<p><label class="label" for="email">Email Address:</label>
 	<input id="email" type="text" name="email" size="30" maxlength="60" value="<?php if (isset($_POST['email'])) echo $_POST['email']; ?>" > </p>
 		<p><label class="label" style="padding-left: 30px; " for="psword">Password:</label>

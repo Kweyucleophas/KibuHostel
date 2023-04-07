@@ -4,6 +4,21 @@
 <head>
 <title>Admin page</title>
 <meta charset=utf-8>
+<style>
+        .container{
+              display: block;
+  margin-top: 20px;
+   overflow-y: scroll;
+    top: 46px;
+   
+        }
+        .content{
+           display: block;
+  
+   overflow-y: scroll;
+    top: 4px;
+        }
+</style>
     <link rel="stylesheet" href="style.css" />
 <script src="SpryAssets/SpryMenuBar.js" type="text/javascript"></script>
 <link href="SpryAssets/SpryMenuBarVertical.css" rel="stylesheet" type="text/css">
@@ -20,7 +35,7 @@
           <ul>
             <li><a href="admin-page.php" style="text-decoration: none;"><img src="icon/icons8-dashboard-80.png" style="width: 30px; height: 30px; margin: 2px;"><span>Dashboard</a></span></li>
             <li><a href="hosteldetails.php" style="text-decoration: none;"><img src="icon/buid.png" style="width: 30px; height: 30px; margin: 2px"><span>Block</a></span></li>
-            <li><a href="Add_room.php" style="text-decoration: none;"><img src="icon/living-room.png" style="width: 30px; height: 30px; margin: 2px;"><span>Room</a></span></li>
+            <li><a href="Admin_Approval.php" style="text-decoration: none;"><img src="icon/living-room.png" style="width: 30px; height: 30px; margin: 2px;"><span>Approve</a></span></li>
              <li><a href="Add_Item.php" style="text-decoration: none;"><img src="icon/to-do.png" style="width: 30px; height: 30px; margin: 2px;"><span>Items</a></span></li>
              <li><a href="Add_Student.php" style="text-decoration: none;"><img src="icon/student.png" style="width: 30px; height: 30px; margin: 2px"><span>Student</a></span>
              </li>
@@ -78,8 +93,10 @@ echo '</h2>';
     <h2 align="center"><a href="balance.php">view total vacant spaces</a></h2>
     <h2 align="center"><a href="admin_view_users.php">view members edit and delete </a></h2>
     
-    <h2 align="center"><a href="pdfhacked/print_pdf.php">view students and print pdf form</a></h2>
+   
+<h2 align="center"><a href="pdfhacked/print_pdf.php">view students and print pdf form</a></h2>
     <h2 align="center"><a href="finance.php">view total accommodation fee paid</a></h2>
+ <h2 align="center"><a href="Admin_Approval.php">Approve cleared students and print pdf form</a></h2>
     </section></div>
 <footer style=" text-align:center;" class="foot">copy right Kibabii University &copy; 2022</footer>
 	

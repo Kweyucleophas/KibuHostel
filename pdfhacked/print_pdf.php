@@ -53,7 +53,7 @@ $w=array(25,20,30,20,20,55);
 	foreach ($data as $eachResult) 
 	{ //width
 		$this->Cell(10);
-		$this->Cell(25,6,$eachResult["fname"],1);
+		$this->Cell(20,6,$eachResult["fname"],1);
 		$this->Cell(20,6,$eachResult["lname"],1);
 		$this->Cell(30,6,$eachResult["email"],1);
 		$this->Cell(20,6,$eachResult["admmision"],1);

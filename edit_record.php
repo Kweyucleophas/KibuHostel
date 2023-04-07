@@ -46,7 +46,7 @@
           <ul>
             <li><a href="admin-page.php" style="text-decoration: none;"><img src="icon/icons8-dashboard-80.png" style="width: 30px; height: 30px; margin: 2px;"><span>Dashboard</a></span></li>
             <li><a href="hosteldetails.php" style="text-decoration: none;"><img src="icon/buid.png" style="width: 30px; height: 30px; margin: 2px"><span>Block</a></span></li>
-            <li><a href="Add_room.php" style="text-decoration: none;"><img src="icon/living-room.png" style="width: 30px; height: 30px; margin: 2px;"><span>Room</a></span></li>
+            <li><a href="Admin_Approval.php" style="text-decoration: none;"><img src="icon/living-room.png" style="width: 30px; height: 30px; margin: 2px;"><span>Approve</a></span></li>
              <li><a href="Add_Item.php" style="text-decoration: none;"><img src="icon/to-do.png" style="width: 30px; height: 30px; margin: 2px;"><span>Items</a></span></li>
              <li><a href="Add_Student.php" style="text-decoration: none;"><img src="icon/student.png" style="width: 30px; height: 30px; margin: 2px"><span>Student</a></span>
              </li>
@@ -85,7 +85,7 @@
        <img src="download (3).jfif" width="190px" height="190px" />
         </section>
 <!-- Start of the page-specific content. -->
-<h2 style="text-align:center; text-transform:capitalize;">Edit a Record<a class="button_small" href="search.php" style="height: 40px; color:#FFF;">search for members</a> <a class="button_small" href="admin-page.php" style="height: 40px; color:#FFF; float:right;">View All Students</a></h2>
+<h2 style="text-align:center; text-transform:capitalize;">Edit a Record<a class="button_small" href="search.php" style="height: 40px; color:#FFF;">search for members</a> <a class="button_small" href="admin_view_users.php" style="height: 40px; color:#FFF; float:right;">View All Students</a></h2>
 <?php 
 // After clicking the Edit link in the register_found_record.php page. This editing interface appears 
 // Look for a valid user ID, either through GET or POST:

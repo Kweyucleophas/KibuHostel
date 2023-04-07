@@ -30,16 +30,26 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['name']))  {
 
 ?>
 
-
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang=en>
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Clearance Form</title>
-    <style type="text/css" >
-    	/* Style for form container */
-form {
+<title>Admin page</title>
+<meta charset=utf-8>
+<style>
+        .container{
+              display: block;
+  margin-top: 20px;
+   overflow-y: scroll;
+    top: 46px;
+   
+        }
+        .content{
+           display: block;
+  
+   overflow-y: scroll;
+    top: 20px;
+        }
+        form {
   max-width: 500px;
   margin: 0 auto;
   padding: 20px;
@@ -85,12 +95,56 @@ body{
     background-color: whitesmoke;
 }
 
-
-    </style>
+</style>
+    <link rel="stylesheet" href="style.css" />
+<script src="SpryAssets/SpryMenuBar.js" type="text/javascript"></script>
+<link href="SpryAssets/SpryMenuBarVertical.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" type="text/css" href="hostel.css">
 </head>
 <body>
-    <form action="" method="post">
+   <div class="form2">
+        
+        </div>
+        <div class="side-menu">
+          <div class="brand-name">
+             <h2 style="display: contents;color: black;"> <img src="logo.png" width="120px" style="width: 60px; height: 60px;">KIBABII HOSTEL</h2>
+          </div>
+          <ul>
+             <li><a href="dashboard.php" style="text-decoration: none;"><img src="icon/icons8-dashboard-80.png" style="width: 30px; height: 30px; margin: 2px;"><span>Dashboard</a></span></li>
+            <li><a href="Student_Clearance.php" style="text-decoration: none;"><img src="icon/buid.png" style="width: 30px; height: 30px; margin: 2px"><span>Clearence</a></span></li>
+            <li><a href="dashboard2.php" style="text-decoration: none;"><img src="icon/living-room.png" style="width: 30px; height: 30px; margin: 2px;"><span>Status</a></span></li>
+             <li><a href="payment.php" style="text-decoration: none;"><img src="icon/to-do.png" style="width: 30px; height: 30px; margin: 2px;"><span>Payments</a></span></li>
+             <li><a href="dashboard2.php" style="text-decoration: none;"><img src="icon/student.png" style="width: 30px; height: 30px; margin: 2px"><span>ConductUs</a></span>
+             </li>
+            <li><a href="dashboard2.php" style="text-decoration: none;"><img src="icon/help.png" style="width: 30px; height: 30px; margin: 2px"><span>Help</a></span></li>
+        </ul>
+        </div>
+        <div class="container">
+  <div class="header">
+    <div class="nav">
+    <div class="search">
+<input type="text" placehold="search" style="width:400px;">
+<button type="submit"><img src="icon/search-512 (1) (1).webp" style="width: 30px; height: 30px;"></button>
+    </div>
+    <div class="user">
+      
+       <img src="icon/notif.png" style="display: flex; width: 30px; height: 30px;">
+      <div class="img-case">
+       <img src="icon/icons8-username-50.png">
+        <p style="margin-left:45px;0px;"><strong style="margin-top: 100px;">Hello,<br>
+      </div>
+    </div>
+     </div>
+</div>
+    <div class="content">
+        <div class="">
+<div class="">
+     <div style="width: 900px; height: 550px; overflow-x: scroll; margin: auto; margin-top: 50px; display: fixed; overflow-y: scroll;
+   ">
+    <div class="">
+     <form action="" method="post">
         <center><img style="width:80px; height: 70px; text-align: center;" src="logo.png"></center>
+        <h1>Hostel Clearance Form</h1>
         <h2 style="text-align: center;">Fill The Form</h2>
         <label for="name">Name:</label>
         <input type="text" name="name" id="name" required>
@@ -123,5 +177,17 @@ body{
     <div style="text-align: center;">
       <img src="copy.jpeg">
   </div>
+  </div>
+</div>
+</div>
 </body>
 </html>
+
+
+
+
+
+
+
+
+
